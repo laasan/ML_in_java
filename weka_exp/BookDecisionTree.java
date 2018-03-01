@@ -16,6 +16,20 @@ public class BookDecisionTree {
                     new BookDecisionTree("books.arff");
             J48 tree = decisionTree.performTraining();
             System.out.println(tree.toString());
+
+            //testing:
+            Instance testInstance = decisionTree.
+                    getTestInstance("Leather", "yes", "historical");
+            int result = (int) tree.classifyInstance(testInstance);
+            String results = decisionTree.trainingData.attribute(3).value(result);
+            System.out.println(
+                    "Test with: " + testInstance + " Result: " + results);
+            testInstance = decisionTree.
+                    getTestInstance("Paperback", "no", "historical");
+            result = (int) tree.classifyInstance(testInstance);
+            results = decisionTree.trainingData.attribute(3).value(result);
+            System.out.println(
+                    "Test with: " + testInstance + " Result: " + results);
         } catch (Exception ex) {
 // Handle exceptions
         }
