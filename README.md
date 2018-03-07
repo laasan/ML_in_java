@@ -1,2 +1,2 @@
-# ML_on_java
+# ML_in_java
 machine learning exp
